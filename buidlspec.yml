@@ -2,14 +2,15 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      java: openjdk11
     commands:
-      - npm install
-
+      - apt-get update
+      - apt-get install -y maven
   build:
     commands:
-      - npm run build
-
+      - mvn clean package
 artifacts:
   files:
-    - '**/*'
-  base-directory: 'dist'
+    - target/*.jar
+
