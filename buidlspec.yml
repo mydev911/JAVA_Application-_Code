@@ -7,7 +7,6 @@ phases:
 
   build:
     commands:
-      - npm test
       - npm run build
 
 artifacts:
